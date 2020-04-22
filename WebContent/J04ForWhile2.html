@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J04ForWhile.html</title>
+    <script>
+        for(var i=0; i<5 ; i++){
+            var varInFor = 100;
+            document.write('i='+i+"<br/>");
+        }
+
+        document.write("for문이 끝난후 i의 값:"+i+"<br/>");
+        document.write("for문안에서 선언한 변수 varInFor:"+varInFor);
+
+        /*
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0 
+        0 0 0 1 0
+        0 0 0 0 1
+        
+        시나리오] for문으로 위와 같은 모양을 출력하는 JS를 작성하시오
+        */
+
+        document.write("<h2>이중 for문을 통한 출력</h2>");
+        for(var i=1 ; i<=5 ; i++){
+            for(var j=1; j<=5; j++){
+                if(i==j)
+                    document.write("1&nbsp;");
+                else 
+                    document.write("0&nbsp;");
+            }
+            document.write("<br/>");
+        }
+
+        /*
+        연습문제] 위 모양을 이중 while문으로 수정하시오
+        */
+        document.write("<h2>이중 while문으로 수정하여 출력하기</h2>");
+        var aa=1;
+        var bb=1;
+        while(aa<=5){
+            while(aa<=bb){
+                if(aa==bb)
+                    document.write("1&nbsp;");
+                else 
+                    document.write("0&nbsp;");
+                    bb++;
+            }
+            bb=1;
+            aa++;
+            document.write("<br/>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        document.write("여기는 body영역");
+        document.write("for문이 끝난후 body에서의 1rkqt 출력: "+i+<br/>);
+        document.write("for문 안에서 선언한 varInfor:"+varInFor);
+    </script>
+    dsdasdsadsa
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var pTag, pSize;
+        window.onload =function(){
+            pTag = document.getElementById("article");
+            pSize = parseInt(pTag.style.fontSize);
+        }
+
+        function fnArticle(flag){
+            switch(flag){
+                case "+":
+                    pSize+=10;
+                    pTag.style.fontSize=pSize+"px";
+                    break;
+                case "-":
+                    pSize-=10;
+                    pTag.style.fontSize=pSize+"px";
+                    break;
+                case "R":
+                    pSize+=10;
+                    pTag.style.color="red";
+                    break;
+                case "G":
+                    pSize+=10;
+                    pTag.style.color="green";
+                    break;
+                 case "B":
+                    pSize+=10;
+                    pTag.style.color="blue";
+                    break;
+                case "":
+                    pSize+=10;
+                    pTag.style.color="black";
+                    break;
+                 case "Bo":
+                    pSize+=10;
+                    pTag.style.fontWeight="bold";
+                    break;
+                 case "No":
+                    pSize+=10;
+                    pTag.style.fontWeight="normal";
+                    break;
+                 case "Ce":
+                    pSize+=10;
+                    pTag.style.textAlign="center";
+                    break;
+                case "Le":
+                    pSize+=10;
+                    pTag.style.textAlign="left";
+                    break;
+
+            }
+        }
+    /*
+	문제] 글꼴바꾸기 버튼을 계속 누를때마다 아래 5가지
+	폰트가 토글되어 적용될수 있도록 함수를 정의하시오.
+	글꼴 : Verdana, 굴림체, 휴먼옛체, 궁서, Impact
+
+	function setFont(){
+		실행부;
+	}
+    */
+    var fontToggle=0; //
+    function setFont(){
+        //문제에서 주어진 폰트를 배열로선언
+        var fontArray = ['Verdana' ,'굴림체', '휴먼옛체', '궁서' , "Impact"];
+        //정수를 5로 나누면 나머지는 0~4까지 생성
+        var fontIndex = fontToggle % 5;
+        //위에서구한 수를 인덱스로 폰트설정
+        pTag.style.fontFamily = fontArray[fontIndex];
+
+        fontToggle++;
+    }
+    </script>
+</head>
+<body>
+    <h2>자바스크립트로 CSS제어하기</h2>
+    <input type="button" value="글꼴바꾸기" onclick="setFont();">
+    <fieldset>
+        <legend>신문기사</legend>
+        <button onclick="fnArticle('+');">+</button>
+        <button onclick="fnArticle('-');">-</button>
+        <button onclick="fnArticle('R');">Red</button>
+        <button onclick="fnArticle('G');">Green</button>
+        <button onclick="fnArticle('B');">Blue</button>
+        <button onclick="fnArticle('');">Black</button>
+        <button onclick="fnArticle('Bo');">볼드체</button>
+        <button onclick="fnArticle('No');">보통체</button>
+        <button onclick="fnArticle('Ce');">가운데정렬</button>
+        <button onclick="fnArticle('Le');">좌측정렬</button>
+    </fieldset>
+    <p style="font-size: 12px;" id="article">
+        오늘의 뉴스<br/>
+        모든 당뇨병 환자는 같은 병을 앓고 있지만 자세히 보면 동반 질환이나 건강 상태가 모두 다르기 때문에 환자 상태에 맞는 치료가 필요합니다. 
+
+1990년대 초까지만 해도 우리나라에서 사용가능한 당뇨병 약제는 단 두 종류에 불과했습니다. 하지만 현재는 총 9가지 계열 약이 개발돼 환자별 맞춤 처방이 가능해졌습니다. 
+
+세부적으로는 △인슐린 저항성 개선 △인슐린 분비 촉진 △식욕 억제 △장에서 포도당 흡수차단 △신장으로 당 배설 촉진 △인크레틴 호르몬 증가 등 다양한 약제가 개발돼 있습니다. 
+
+강동경희대병원 내분비대사내과 정인경 교수는 “비만한 환자에게는 살이 빠지는 당뇨약을, 심혈관질환이나 콩팥질환 있다면 이를 보호하는 약을, 또 혈당에 민감한 환자에겐 저혈당 발생 위험을 줄여주는 약을 처방한다”며 “이렇게 개별화된 맞춤처방을 해야 약 부작용을 최소화하면서 혈당을 효과적으로 낮출 수 있다”고 설명했습니다. 
+
+환자별 맞춤약제로 당뇨병의 치료효과는 높아지고, 부작용과 합병증은 줄어든 것입니다. 물론 개인에게 맞는 최상의 약제를 선택하기 위해서는 내분비대사내과 전문의의 진단과 상담을 통해 결정해야 합니다.
+    </p>
+</body>
+</html>
